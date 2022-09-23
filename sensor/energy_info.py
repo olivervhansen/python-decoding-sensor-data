@@ -29,5 +29,6 @@ class EnergyData(HouseInfo):
 
     def calculate_energy_usage(self, data):
         total_energy = sum(
-            [self.ENERGY_PER_BULB*field for field in data])
+            [field * self.ENERGY_PER_BULB for field in data])
+        # list comprehension https://www.w3schools.com/python/python_lists_comprehension.asp
         return total_energy
